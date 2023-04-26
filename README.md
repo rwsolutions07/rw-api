@@ -5,7 +5,7 @@ Api de acesso a informações.
 ## Tecnologias
 ```
 Spring Boot
-PA
-Spring security
+JPA
+Spring Security
 Swagger
 ```
