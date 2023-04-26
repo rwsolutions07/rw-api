@@ -6,7 +6,6 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import rw.solutions.api.model.Pessoa;
-import rw.solutions.api.model.dto.Response;
 import rw.solutions.api.model.record.AtualizacaoPessoa;
 import rw.solutions.api.model.record.CadastroPessoa;
 import rw.solutions.api.model.record.DadosPessoa;
@@ -28,18 +27,20 @@ public class PessoaService {
 		return new DadosPessoa(findById);
 	}
 	
-	public Response cdastrarPessoa(CadastroPessoa cadastro) {
+	public AtualizacaoPessoa cdastrarPessoa(CadastroPessoa cadastro) {
 		
 		Pessoa pessoa = new Pessoa(cadastro);
 		this.repository.save(pessoa);
 		
-		return new Response(true, "Pessoa Adicionada com sucesso");
+		return new AtualizacaoPessoa(pessoa);
 	}
 
-	public void atualizarPessoa(AtualizacaoPessoa dados) {
+	public AtualizacaoPessoa atualizarPessoa(AtualizacaoPessoa dados) {
 		Pessoa pessoa = this.repository.getReferenceById(dados.id());
 		pessoa.atualizarInformacoes(dados);
 		this.repository.save(pessoa);
+		
+		return new AtualizacaoPessoa(pessoa);
 	}
 
 
