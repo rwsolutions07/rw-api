@@ -3,9 +3,9 @@
 Api de acesso a informações.
 
 ## Tecnologias
-
-*Spring Boot
-*JPA
-*Spring security
-*Swagger
-
+```
+**Spring Boot**
+**JPA**
+**Spring security**
+**Swagger**
+```
