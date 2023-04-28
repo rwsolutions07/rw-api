@@ -5,8 +5,9 @@ Api de acesso a informações.
 ## Tecnologias
 ```
 Spring Boot
-JPA
 Spring Security
+Spring test
+JPA
 Swagger
 Log4j
 
