@@ -1,0 +1,2 @@
+create table pessoa (id bigint not null auto_increment, cargo varchar(255) not null, descricao varchar(1080) not null, foto tinyblob, nome varchar(255) not null, url_linkedin varchar(255) not null, primary key (id)) engine=InnoDB;
+create table usuario (id bigint not null auto_increment, nome varchar(255) not null, password varchar(255) not null, username varchar(255) not null, primary key (id)) engine=InnoDB;

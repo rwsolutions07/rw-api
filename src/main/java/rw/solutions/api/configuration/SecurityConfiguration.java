@@ -25,8 +25,10 @@ public class SecurityConfiguration {
 	
 	@Bean
 	protected SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
-		return http.csrf().disable()
-			   .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS)
+		
+		http.cors().and().csrf().disable();
+		
+		return http.sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS)
 			   .and()
 			   .authorizeHttpRequests()
 			   .requestMatchers(HttpMethod.POST, "/autenticacao/login").permitAll()
@@ -50,4 +52,9 @@ public class SecurityConfiguration {
 	protected PasswordEncoder passwordEncoder() throws Exception {
 		return new BCryptPasswordEncoder();
 	}
+	
+	public static void main(String[] args) {
+		System.out.println(new BCryptPasswordEncoder().encode("RWSolutions01"));
+	}
+	
 }
